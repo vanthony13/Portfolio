@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #3a6186, #89253e);
+    color: #f5f5f5;
+  }
+  
+  header {
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+  }
+  
+  nav ul li {
+    margin-left: 1rem;
+  }
+  
+  nav ul li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #ff8ba7;
+  }
+  
+  main {
+    padding-top: 4rem;
+  }
+  
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  h1, h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .social-media a {
+    margin-right: 0.5rem;
+    text-decoration: none;
+    color: #f5f5f5;
+    transition: color 0.3s;
+  }
+  
+  .social-media a:hover {
+    color: #ff8ba7;
+  }
+  
+  footer {
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  
+    nav ul li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .profile-image {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin: 20px;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    justify-items: center;
+  }
+  
+  .skill-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .skill-container img {
+    width: 80px;
+    height: auto;
+    width: 170px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  
+  .skill-container h3 {
+    margin-top: 0.5rem;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @supports (-webkit-animation: fadeInUp 1s forwards) {
+    .skill-container {
+      -webkit-animation: fadeInUp 1s forwards;
+    }
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    justify-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+  }
+
+  .projects-grid.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .project-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    width: 280px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    perspective: 1000px;
+  }
+  
+  .project-container:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    transform: rotateY(360deg);
+  }
+
+  .project-container .project-back {
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+  }
+
+  .project-container img {
+    width: 180px;
+    height: auto;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+    
+  }
+  
+  .project-container h3 {
+    margin-top: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
+
+  .project-title {
+    margin-top: 5rem;
+    text-align: center;
+  }
+
+  .project-image-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 80%;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-container:hover img {
+    transform: scale(1.1);
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  section {
+    background: linear-gradient(to right, #3a6186, #89253e);
+    padding: 4rem 0;
+   
+   
+  }
+  
+  #contact {
+    position: relative;
+    z-index: 1;
+  }
+  
+  #contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #141416, #4a4258, #0e0e10);
+    color: #f5f5f5;
+  }
+  
+  section {
+    background: linear-gradient(to right, #431b7e, #8539a2, #be4c9d);
+    background: linear-gradient(135deg, #141416, #4a4258, #0e0e10);
+    padding: 4rem 0;
+  }
+  
+  h1, h2 {
+    color: #f5f5f5;
+  }
+  
+  .social-media a {
+    color: #f5f5f5;
+  }
+  
+  .social-media a:hover {
+    color: #ff88c2;
+  }
+  
+  footer {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  #experience {
+    background-color: #191919;
+    color: #f5f5f5;
+    padding: 4rem 0;
+  }
+  
+  #experience .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  #experience h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  
+  #experience ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  #experience li {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    width: 32%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: #2d2d2d;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  #experience li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    transition: color 0.3s;
+    text-decoration: underline;
+  }
+  
+  #experience li a:hover {
+    color: #ff8ba7;
+  }
+
+  .social-media a img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    padding:0px
+    
+  }
+  
+  
