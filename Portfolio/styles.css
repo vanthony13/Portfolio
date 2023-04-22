@@ -106,6 +106,7 @@
     transform: translateY(20px);
     animation: fadeInUp 1s forwards;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    
   }
   
   .skill-container img {
@@ -121,6 +122,8 @@
   
   .skill-container h3 {
     margin-top: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
   }
   
   @keyframes fadeInUp {
@@ -348,6 +351,8 @@
     margin: 20px;
   }
   
+
+  
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -364,6 +369,14 @@
     transform: translateY(20px);
     animation: fadeInUp 1s forwards;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+  }
+
+  
+  @media only screen and (max-width: 768px) {
+    .skill-container {
+      width: 100%;
+    }
   }
   
   .skill-container img {
@@ -381,10 +394,39 @@
     margin-top: 0.5rem;
   }
   
+
+  .animation-wrapper {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .animation-container {
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(50%);
+    animation: fadeInUp 5s forwards;
+  }
+  
   @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50%);
+    }
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
   
+  @media only screen and (max-width: 768px) {
+    .animation-container {
+      font-size: 1rem;
+    }
+}
+ 

@@ -19,7 +19,12 @@
       </ul>
     </nav>
   </header>
-  <main>
+  <div class="animation-wrapper">
+        <div class="animation-container">
+          <h1 class="welcome-text">Welcome to Vitoria's Portfolio</h1>
+        </div>
+      </div>
+  <main id="main-content" style="display: none;">
     <section id="about">
       <div class="container">
         <h1>Vitoria Anthony</h1>
@@ -47,6 +52,7 @@
         </div>
       </section>
     </section>
+    
     <section id="skills">
         <div class="container">
           <h2>Skills</h2>
@@ -158,6 +164,25 @@ window.addEventListener('scroll', function() {
     projectsGrid.classList.add('show');
   }
 });
+
+window.addEventListener('load', function() {
+  var welcomeMessage = document.getElementById('welcome-message');
+  var pageContent = document.getElementById('page-content');
+  setTimeout(function() {
+    welcomeMessage.style.display = 'none'; /* Hide the welcome message after animation duration */
+    pageContent.style.display = 'block'; /* Show the page content after animation is complete */
+  }, 5000); /* Set the duration of your animation in milliseconds */
+});
+
+// Wait for the animation to finish, then show the main content
+// Wait for the animation to finish, then show the main content
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.querySelector('.animation-wrapper').style.display = 'none';
+    document.querySelector('#main-content').style.display = 'block';
+  }, 3000); // Wait for 5 seconds (5000 milliseconds)
+});
+
 
   </script>
 </body>
