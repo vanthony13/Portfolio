@@ -430,3 +430,16 @@
     }
 }
  
+@media only screen and (max-width: 768px) {
+    .skill-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .skill-container img {
+      margin-bottom: 10px;
+    }
+  }
+  
